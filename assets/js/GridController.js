@@ -32,9 +32,8 @@ Class('GridController').includes(CustomEventSupport)({
             var gridController = this,
                 biggerHalfGrid = {
                     w : Math.ceil(grid.length / 2),
-                    h : (grid.length-1)
+                    h : grid.length
                 };
-
 
             this.addPixel(0,0, '#333');
             this.addPixel(9,0, '#333');
@@ -42,7 +41,7 @@ Class('GridController').includes(CustomEventSupport)({
             for(var y = 0; y < biggerHalfGrid.h; y+=1){
                 for(var x = 0; x < biggerHalfGrid.w; x+=1){
 
-                    if(y===4 || x===2){
+                    if(Math.random() >= 0.5){
                         gridController.addPixel(x, y, '#333');
                     }
 
