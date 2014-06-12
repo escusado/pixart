@@ -1,0 +1,15 @@
+.grid-view{
+    width: 190px;
+    height: 190px;
+
+    background-color: #eee;
+
+    box-shadow : inset 0 0 0 1px rgba(0,0,0, .5);
+}
+
+.pixel {
+    float: left;
+
+    width: 10px;
+    height: 10px;
+}

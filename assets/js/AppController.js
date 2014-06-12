@@ -2,20 +2,27 @@ Class('AppController').inherits(Widget)({
     prototype : {
         setup : function setup(options){
 
-            this.gridController = new GridController();
+            this.gridController = new GridController({
+                size : 19
+            });
+
             this.gridView = new GridView();
+            this.gridView.render(this.element);
 
             this._bindEvents();
+
+            this.gridController.update();
 
             return true;
         },
 
         _bindEvents : function _bindEvents(){
-            this.gridController.bind('data-update', this._updateGridView.bind(this));
+            this.gridController.bind('update', this._updateGridView.bind(this));
         },
 
         _updateGridView : function _updateGridView(ev){
-            this.gridView.render({
+            console.log('>', ev);
+            this.gridView.update({
                 data : ev.data
             });
         }
